@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		000000000000000000000300 /* VisualChessEngineMatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000100 /* VisualChessEngineMatchApp.swift */; };
+		000000000000000000000301 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000101 /* ContentView.swift */; };
+		000000000000000000000302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000102 /* Assets.xcassets */; };
+		000000000000000000000303 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000105 /* Square.swift */; };
+		000000000000000000000304 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000106 /* Piece.swift */; };
+		000000000000000000000305 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000107 /* Move.swift */; };
+		000000000000000000000306 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000108 /* Position.swift */; };
+		000000000000000000000307 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000109 /* GameState.swift */; };
+		000000000000000000000308 /* SAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000110 /* SAN.swift */; };
+		000000000000000000000309 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000111 /* GameController.swift */; };
+		000000000000000000000400 /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000200 /* PlaceholderTests.swift */; };
+		000000000000000000000401 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000105 /* Square.swift */; };
+		000000000000000000000402 /* SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000201 /* SquareTests.swift */; };
+		000000000000000000000403 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000106 /* Piece.swift */; };
+		000000000000000000000404 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000107 /* Move.swift */; };
+		000000000000000000000405 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000108 /* Position.swift */; };
+		000000000000000000000406 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000109 /* GameState.swift */; };
+		000000000000000000000407 /* SAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000110 /* SAN.swift */; };
+		000000000000000000000412 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000111 /* GameController.swift */; };
+		000000000000000000000413 /* GameControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000206 /* GameControllerTests.swift */; };
+		000000000000000000000408 /* PositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000202 /* PositionTests.swift */; };
+		000000000000000000000409 /* MoveGenerationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000203 /* MoveGenerationTests.swift */; };
+		000000000000000000000410 /* DrawRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000204 /* DrawRulesTests.swift */; };
+		000000000000000000000411 /* SANTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000205 /* SANTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		000000000000000000000051 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000000000000000000010;
+			remoteInfo = VisualChessEngineMatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		000000000000000000000020 /* VisualChessEngineMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualChessEngineMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000021 /* VisualChessEngineMatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VisualChessEngineMatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000100 /* VisualChessEngineMatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualChessEngineMatchApp.swift; sourceTree = "<group>"; };
+		000000000000000000000101 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		000000000000000000000102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		000000000000000000000103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000000000000000000000104 /* VisualChessEngineMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VisualChessEngineMatch.entitlements; sourceTree = "<group>"; };
+		000000000000000000000105 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		000000000000000000000106 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		000000000000000000000107 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		000000000000000000000108 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		000000000000000000000109 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		000000000000000000000110 /* SAN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAN.swift; sourceTree = "<group>"; };
+		000000000000000000000111 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		000000000000000000000200 /* PlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTests.swift; sourceTree = "<group>"; };
+		000000000000000000000201 /* SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
+		000000000000000000000202 /* PositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
+		000000000000000000000203 /* MoveGenerationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveGenerationTests.swift; sourceTree = "<group>"; };
+		000000000000000000000204 /* DrawRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRulesTests.swift; sourceTree = "<group>"; };
+		000000000000000000000205 /* SANTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SANTests.swift; sourceTree = "<group>"; };
+		000000000000000000000206 /* GameControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControllerTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		000000000000000000000041 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000000000000000000000002 /* */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000003 /* VisualChessEngineMatch */,
+				000000000000000000000004 /* VisualChessEngineMatchTests */,
+				000000000000000000000005 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		000000000000000000000003 /* VisualChessEngineMatch */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000100 /* VisualChessEngineMatchApp.swift */,
+				000000000000000000000101 /* ContentView.swift */,
+				000000000000000000000105 /* Square.swift */,
+				000000000000000000000106 /* Piece.swift */,
+				000000000000000000000107 /* Move.swift */,
+				000000000000000000000108 /* Position.swift */,
+				000000000000000000000109 /* GameState.swift */,
+				000000000000000000000110 /* SAN.swift */,
+				000000000000000000000111 /* GameController.swift */,
+				000000000000000000000102 /* Assets.xcassets */,
+				000000000000000000000103 /* Info.plist */,
+				000000000000000000000104 /* VisualChessEngineMatch.entitlements */,
+			);
+			path = VisualChessEngineMatch;
+			sourceTree = "<group>";
+		};
+		000000000000000000000004 /* VisualChessEngineMatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000200 /* PlaceholderTests.swift */,
+				000000000000000000000201 /* SquareTests.swift */,
+				000000000000000000000202 /* PositionTests.swift */,
+				000000000000000000000203 /* MoveGenerationTests.swift */,
+				000000000000000000000204 /* DrawRulesTests.swift */,
+				000000000000000000000205 /* SANTests.swift */,
+				000000000000000000000206 /* GameControllerTests.swift */,
+			);
+			path = VisualChessEngineMatchTests;
+			sourceTree = "<group>";
+		};
+		000000000000000000000005 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000020 /* VisualChessEngineMatch.app */,
+				000000000000000000000021 /* VisualChessEngineMatchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000000000000000000000010 /* VisualChessEngineMatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000000000000000000030 /* Build configuration list for PBXNativeTarget "VisualChessEngineMatch" */;
+			buildPhases = (
+				000000000000000000000040 /* Sources */,
+				000000000000000000000041 /* Frameworks */,
+				000000000000000000000042 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VisualChessEngineMatch;
+			productName = VisualChessEngineMatch;
+			productReference = 000000000000000000000020 /* VisualChessEngineMatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		000000000000000000000011 /* VisualChessEngineMatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000000000000000000031 /* Build configuration list for PBXNativeTarget "VisualChessEngineMatchTests" */;
+			buildPhases = (
+				000000000000000000000043 /* Sources */,
+				000000000000000000000044 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000000000000000000000050 /* PBXTargetDependency */,
+			);
+			name = VisualChessEngineMatchTests;
+			productName = VisualChessEngineMatchTests;
+			productReference = 000000000000000000000021 /* VisualChessEngineMatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		000000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					000000000000000000000010 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					000000000000000000000011 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 000000000000000000000010;
+					};
+				};
+			};
+			buildConfigurationList = 000000000000000000000032 /* Build configuration list for PBXProject "VisualChessEngineMatch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 000000000000000000000002 /* */;
+			productRefGroup = 000000000000000000000005 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				000000000000000000000010 /* VisualChessEngineMatch */,
+				000000000000000000000011 /* VisualChessEngineMatchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		000000000000000000000042 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000000000000000000000302 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		000000000000000000000040 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000000000000000000000300 /* VisualChessEngineMatchApp.swift in Sources */,
+				000000000000000000000301 /* ContentView.swift in Sources */,
+				000000000000000000000303 /* Square.swift in Sources */,
+				000000000000000000000304 /* Piece.swift in Sources */,
+				000000000000000000000305 /* Move.swift in Sources */,
+				000000000000000000000306 /* Position.swift in Sources */,
+				000000000000000000000307 /* GameState.swift in Sources */,
+				000000000000000000000308 /* SAN.swift in Sources */,
+				000000000000000000000309 /* GameController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000000000000000000000400 /* PlaceholderTests.swift in Sources */,
+				000000000000000000000401 /* Square.swift in Sources */,
+				000000000000000000000402 /* SquareTests.swift in Sources */,
+				000000000000000000000403 /* Piece.swift in Sources */,
+				000000000000000000000404 /* Move.swift in Sources */,
+				000000000000000000000405 /* Position.swift in Sources */,
+				000000000000000000000406 /* GameState.swift in Sources */,
+				000000000000000000000407 /* SAN.swift in Sources */,
+				000000000000000000000408 /* PositionTests.swift in Sources */,
+				000000000000000000000409 /* MoveGenerationTests.swift in Sources */,
+				000000000000000000000410 /* DrawRulesTests.swift in Sources */,
+				000000000000000000000411 /* SANTests.swift in Sources */,
+				000000000000000000000412 /* GameController.swift in Sources */,
+				000000000000000000000413 /* GameControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		000000000000000000000050 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000000000000000000000010 /* VisualChessEngineMatch */;
+			targetProxy = 000000000000000000000051 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		000000000000000000000033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = VisualChessEngineMatch/VisualChessEngineMatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VisualChessEngineMatch/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisualChessEngineMatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		000000000000000000000034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = VisualChessEngineMatch/VisualChessEngineMatch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = VisualChessEngineMatch/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisualChessEngineMatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		000000000000000000000035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisualChessEngineMatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisualChessEngineMatch.app/Contents/MacOS/VisualChessEngineMatch";
+			};
+			name = Debug;
+		};
+		000000000000000000000036 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.VisualChessEngineMatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisualChessEngineMatch.app/Contents/MacOS/VisualChessEngineMatch";
+			};
+			name = Release;
+		};
+		000000000000000000000037 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		000000000000000000000038 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		000000000000000000000030 /* Build configuration list for PBXNativeTarget "VisualChessEngineMatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000033 /* Debug */,
+				000000000000000000000034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000000000000000000000031 /* Build configuration list for PBXNativeTarget "VisualChessEngineMatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000035 /* Debug */,
+				000000000000000000000036 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000000000000000000000032 /* Build configuration list for PBXProject "VisualChessEngineMatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000037 /* Debug */,
+				000000000000000000000038 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 000000000000000000000001 /* Project object */;
+}
