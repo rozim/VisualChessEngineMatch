@@ -46,11 +46,14 @@ struct MatchView: View {
                 Text(player?.name ?? (color == .white ? "White" : "Black"))
                     .font(.headline)
                 if let pv = info?.pv, !pv.isEmpty {
-                    let san = orchestrator.controller.game.sanLine(forUCIMoves: pv, figurine: true).joined(separator: " ")
-                    Text("PV: \(san)")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
+                    let moves = orchestrator.controller.game.sanLine(forUCIMoves: pv, figurine: true)
+                    HStack(alignment: .firstTextBaseline, spacing: 4) {
+                        Text("PV:")
+                        FigurineSANLine(moves: moves, baseFont: .caption, figurineSize: 16)
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
                 } else {
                     Text("...")
                         .font(.caption)
@@ -129,11 +132,11 @@ struct MatchView: View {
                                 .frame(width: 30, alignment: .trailing)
                                 .foregroundStyle(.secondary)
                             
-                            Text(history[i * 2])
+                            FigurineSANText(san: history[i * 2], baseFont: .body, figurineSize: 22)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             
                             if i * 2 + 1 < history.count {
-                                Text(history[i * 2 + 1])
+                                FigurineSANText(san: history[i * 2 + 1], baseFont: .body, figurineSize: 22)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             } else {
                                 Spacer().frame(maxWidth: .infinity)
