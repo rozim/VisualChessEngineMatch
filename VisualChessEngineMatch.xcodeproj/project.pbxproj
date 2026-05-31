@@ -20,6 +20,8 @@
 		000000000000000000000310 /* UCIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000112 /* UCIProtocol.swift */; };
 		000000000000000000000311 /* UCIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000113 /* UCIEngine.swift */; };
 		000000000000000000000312 /* EngineOptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000114 /* EngineOptionStore.swift */; };
+		000000000000000000000313 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000115 /* BoardView.swift */; };
+		000000000000000000000314 /* MatchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000116 /* MatchConfig.swift */; };
 		000000000000000000000400 /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000200 /* PlaceholderTests.swift */; };
 		000000000000000000000401 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000105 /* Square.swift */; };
 		000000000000000000000402 /* SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000201 /* SquareTests.swift */; };
@@ -40,6 +42,8 @@
 		000000000000000000000417 /* UCIProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000207 /* UCIProtocolTests.swift */; };
 		000000000000000000000418 /* UCIEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000208 /* UCIEngineTests.swift */; };
 		000000000000000000000419 /* EngineOptionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000209 /* EngineOptionStoreTests.swift */; };
+		000000000000000000000420 /* MatchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000116 /* MatchConfig.swift */; };
+		000000000000000000000421 /* MatchConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000210 /* MatchConfigTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,8 @@
 		000000000000000000000112 /* UCIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIProtocol.swift; sourceTree = "<group>"; };
 		000000000000000000000113 /* UCIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIEngine.swift; sourceTree = "<group>"; };
 		000000000000000000000114 /* EngineOptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineOptionStore.swift; sourceTree = "<group>"; };
+		000000000000000000000115 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		000000000000000000000116 /* MatchConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConfig.swift; sourceTree = "<group>"; };
 		000000000000000000000200 /* PlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTests.swift; sourceTree = "<group>"; };
 		000000000000000000000201 /* SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
 		000000000000000000000202 /* PositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 		000000000000000000000207 /* UCIProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIProtocolTests.swift; sourceTree = "<group>"; };
 		000000000000000000000208 /* UCIEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIEngineTests.swift; sourceTree = "<group>"; };
 		000000000000000000000209 /* EngineOptionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineOptionStoreTests.swift; sourceTree = "<group>"; };
+		000000000000000000000210 /* MatchConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConfigTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +131,8 @@
 				000000000000000000000112 /* UCIProtocol.swift */,
 				000000000000000000000113 /* UCIEngine.swift */,
 				000000000000000000000114 /* EngineOptionStore.swift */,
+				000000000000000000000115 /* BoardView.swift */,
+				000000000000000000000116 /* MatchConfig.swift */,
 				000000000000000000000102 /* Assets.xcassets */,
 				000000000000000000000103 /* Info.plist */,
 				000000000000000000000104 /* VisualChessEngineMatch.entitlements */,
@@ -144,6 +153,7 @@
 				000000000000000000000207 /* UCIProtocolTests.swift */,
 				000000000000000000000208 /* UCIEngineTests.swift */,
 				000000000000000000000209 /* EngineOptionStoreTests.swift */,
+				000000000000000000000210 /* MatchConfigTests.swift */,
 			);
 			path = VisualChessEngineMatchTests;
 			sourceTree = "<group>";
@@ -260,6 +270,8 @@
 				000000000000000000000310 /* UCIProtocol.swift in Sources */,
 				000000000000000000000311 /* UCIEngine.swift in Sources */,
 				000000000000000000000312 /* EngineOptionStore.swift in Sources */,
+				000000000000000000000313 /* BoardView.swift in Sources */,
+				000000000000000000000314 /* MatchConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +299,8 @@
 				000000000000000000000417 /* UCIProtocolTests.swift in Sources */,
 				000000000000000000000418 /* UCIEngineTests.swift in Sources */,
 				000000000000000000000419 /* EngineOptionStoreTests.swift in Sources */,
+				000000000000000000000420 /* MatchConfig.swift in Sources */,
+				000000000000000000000421 /* MatchConfigTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
