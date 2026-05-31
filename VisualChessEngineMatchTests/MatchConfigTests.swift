@@ -29,4 +29,19 @@ final class MatchConfigTests: XCTestCase {
         XCTAssertEqual(decoded, config)
         XCTAssertEqual(decoded.engine1.uciOptions["Threads"], "4")
     }
+
+    func testPersistence() {
+        var config = MatchConfig.standard()
+        config.miniMatchCount = 42
+        config.engine1.name = "Persistent Engine"
+        
+        config.save()
+        
+        let loaded = MatchConfig.load()
+        XCTAssertEqual(loaded.miniMatchCount, 42)
+        XCTAssertEqual(loaded.engine1.name, "Persistent Engine")
+        
+        // Cleanup
+        UserDefaults.standard.removeObject(forKey: MatchConfig.userDefaultsKey)
+    }
 }

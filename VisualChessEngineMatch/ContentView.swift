@@ -12,12 +12,16 @@ struct ContentView: View {
                 matchOverlay()
             } else {
                 MatchConfigView(config: $config, onStart: {
+                    config.save()
                     orchestrator.startMatch(config: config)
                     isShowingMatch = true
                 })
             }
         }
         .frame(minWidth: 800, minHeight: 650)
+        .onAppear {
+            config = MatchConfig.load()
+        }
     }
     
     private func matchOverlay() -> some View {

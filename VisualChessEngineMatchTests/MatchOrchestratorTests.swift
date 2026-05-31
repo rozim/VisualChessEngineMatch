@@ -14,8 +14,8 @@ final class MatchOrchestratorTests: XCTestCase {
         let config = MatchConfig(
             miniMatchCount: 1, // 2 games total
             epdFilePath: nil,
-            engine1: EngineConfig(name: "Stockfish 1", binaryPath: stockfishPath, timePerGame: 2, incrementPerMove: 0.1, uciOptions: [:]),
-            engine2: EngineConfig(name: "Stockfish 2", binaryPath: stockfishPath, timePerGame: 2, incrementPerMove: 0.1, uciOptions: [:])
+            engine1: EngineConfig(name: "Stockfish 1", binaryPath: stockfishPath, timePerGame: 5, incrementPerMove: 0.1, uciOptions: [:]),
+            engine2: EngineConfig(name: "Stockfish 2", binaryPath: stockfishPath, timePerGame: 5, incrementPerMove: 0.1, uciOptions: [:])
         )
 
         orchestrator.startMatch(config: config)

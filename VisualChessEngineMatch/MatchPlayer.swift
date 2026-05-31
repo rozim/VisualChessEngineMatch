@@ -57,13 +57,21 @@ final class MatchPlayer: ObservableObject {
         if case .failed = state {} else { state = .stopped }
     }
 
-    func search(state: GameState, clock: MatchClock) {
+    func search(state: GameState, clock: MatchClock, mode: MatchMode, nodeLimit: Int) {
         guard let engine = engine else { return }
         self.state = .thinking
         engine.send("position fen \(state.fen())")
-        let wtime = clock.timeMs(for: .white)
-        let btime = clock.timeMs(for: .black)
-        engine.send("go wtime \(wtime) btime \(btime)")
+        
+        switch mode {
+        case .time:
+            let wtime = clock.timeMs(for: .white)
+            let btime = clock.timeMs(for: .black)
+            let winc = clock.incMs(for: .white)
+            let binc = clock.incMs(for: .black)
+            engine.send("go wtime \(wtime) btime \(btime) winc \(winc) binc \(binc)")
+        case .nodes:
+            engine.send("go nodes \(nodeLimit)")
+        }
     }
 
     private func handle(_ line: String) {

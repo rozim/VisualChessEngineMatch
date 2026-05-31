@@ -28,6 +28,7 @@
 		000000000000000000000319 /* MatchOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000120 /* MatchOrchestrator.swift */; };
 		000000000000000000000320 /* PGNLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000121 /* PGNLogger.swift */; };
 		000000000000000000000324 /* FigurineSANText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000125 /* FigurineSANText.swift */; };
+		000000000000000000000325 /* EvalHistoryGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000126 /* EvalHistoryGraph.swift */; };
 		000000000000000000000321 /* EvalBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000122 /* EvalBarView.swift */; };
 		000000000000000000000322 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000123 /* MatchView.swift */; };
 		000000000000000000000323 /* MatchConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000124 /* MatchConfigView.swift */; };
@@ -102,6 +103,7 @@
 		000000000000000000000120 /* MatchOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOrchestrator.swift; sourceTree = "<group>"; };
 		000000000000000000000121 /* PGNLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNLogger.swift; sourceTree = "<group>"; };
 		000000000000000000000125 /* FigurineSANText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigurineSANText.swift; sourceTree = "<group>"; };
+		000000000000000000000126 /* EvalHistoryGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalHistoryGraph.swift; sourceTree = "<group>"; };
 		000000000000000000000122 /* EvalBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalBarView.swift; sourceTree = "<group>"; };
 		000000000000000000000123 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		000000000000000000000124 /* MatchConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConfigView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				000000000000000000000120 /* MatchOrchestrator.swift */,
 				000000000000000000000121 /* PGNLogger.swift */,
 				000000000000000000000125 /* FigurineSANText.swift */,
+				000000000000000000000126 /* EvalHistoryGraph.swift */,
 				000000000000000000000122 /* EvalBarView.swift */,
 				000000000000000000000123 /* MatchView.swift */,
 				000000000000000000000124 /* MatchConfigView.swift */,
@@ -337,6 +340,7 @@
 				000000000000000000000319 /* MatchOrchestrator.swift in Sources */,
 				000000000000000000000320 /* PGNLogger.swift in Sources */,
 				000000000000000000000324 /* FigurineSANText.swift in Sources */,
+				000000000000000000000325 /* EvalHistoryGraph.swift in Sources */,
 				000000000000000000000321 /* EvalBarView.swift in Sources */,
 				000000000000000000000322 /* MatchView.swift in Sources */,
 				000000000000000000000323 /* MatchConfigView.swift in Sources */,

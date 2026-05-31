@@ -26,9 +26,14 @@ struct MatchView: View {
                 }
             }
             
-            // Right column: Match info and move list
+            // Right column: Match info, graphs, and move list
             VStack(alignment: .leading, spacing: 16) {
                 matchStatusCard()
+                
+                VStack(spacing: 8) {
+                    EvalHistoryGraph(history: orchestrator.player1EvalHistory, engineName: orchestrator.player1.name)
+                    EvalHistoryGraph(history: orchestrator.player2EvalHistory, engineName: orchestrator.player2.name)
+                }
                 
                 Text("Move History")
                     .font(.headline)

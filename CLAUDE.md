@@ -22,19 +22,23 @@ Goal:
 --- engine 1 defaults to /usr/local/bin/stockfish
 --- engine 2 defaults to /opt/homebrew/bin/lc0
 -- Once the engine starts up, query it for UCI options
--- Time per game
--- Increment per move
+
+
 
 - Match configuration
 -- Number of mini matches to play - default to 10
--- Time per game, defaults to 10 seconds
--- Increment per move, defaults to 0.1 seconds
+-- Match mode (2 types, by time or by node limit)
+--- Match mode: by time
+---- Time per game in seconds (default 10), only accept integer, no floating point
+---- Increment per move in seconds (default 0.1), accept floating point
+--- Match mode: by node limit
+---- Node limit (default 10000)
 -- EPD file of openings - default to the file in this repository
 
 - Logic
 -- For each mini match, choose a unique starting position at random from the EPD file
 -- The engines will play from this starting position twice, once as white and once as black
--- Use the UCI seach command that tells the engine how much time is available
+-- Use the UCI seach command that tells the engine how much time is available if this is a timed match, else use "go nodes X" if this is a node limit match
 -- Terminate games on insufficient material, lack of progresss, etc
 
 - Display
@@ -46,7 +50,7 @@ Goal:
 -- Each engine cumulative score (win=1, draw=0.5, loss=0)
 -- Current moves in PGN of current game. PGN SAN moves on screen will use unicode pieces, so for queen moves, do not use the letter Q, instead use the unicocde chess queen
 -- Current prediction/PV from each engine -- this is 1 line per engine
--- Bar graph over time of the engines evaluation prediction
+-- Bar graph over time of the engines evaluation prediction for each engine, so there are 2 of these graphs
 
 - Write a PGN log file of the current match
 -- Overwrite the file when starting

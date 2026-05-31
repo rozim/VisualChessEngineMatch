@@ -39,6 +39,10 @@ final class MatchOrchestrator: ObservableObject {
     @Published private(set) var player1Info: UCIInfo?
     @Published private(set) var player2Info: UCIInfo?
     
+    /// History of evaluations for graphing.
+    @Published private(set) var player1EvalHistory: [Double] = []
+    @Published private(set) var player2EvalHistory: [Double] = []
+    
     private var config: MatchConfig?
     private var openingPositions: [String] = []
     
@@ -148,6 +152,8 @@ final class MatchOrchestrator: ObservableObject {
         
         state = .playing(gameNumber: gameNumber, totalGames: totalGames)
         controller.reset()
+        player1EvalHistory = []
+        player2EvalHistory = []
         
         // Mini-match logic: game 1 has E1=White, game 2 has E2=White.
         let miniMatchIndex = (gameNumber - 1) / 2
@@ -170,8 +176,8 @@ final class MatchOrchestrator: ObservableObject {
         }
         
         clock = MatchClock(
-            whiteTime: config.engine1.timePerGame,
-            blackTime: config.engine2.timePerGame,
+            whiteTime: TimeInterval(config.engine1.timePerGame),
+            blackTime: TimeInterval(config.engine2.timePerGame),
             whiteIncrement: config.engine1.incrementPerMove,
             blackIncrement: config.engine2.incrementPerMove
         )
@@ -185,9 +191,10 @@ final class MatchOrchestrator: ObservableObject {
     }
 
     private func nextTurn() {
-        guard case .playing = state, let clock = clock else { return }
+        guard case .playing = state, let clock = clock, let config = config else { return }
         let activePlayer = controller.sideToMove == .white ? whitePlayer : blackPlayer
-        activePlayer?.search(state: controller.game, clock: clock)
+        let nodeLimit = activePlayer === player1 ? config.engine1.nodeLimit : config.engine2.nodeLimit
+        activePlayer?.search(state: controller.game, clock: clock, mode: config.mode, nodeLimit: nodeLimit)
     }
 
     private func setupSubscriptions(for player: MatchPlayer) {
@@ -243,8 +250,27 @@ final class MatchOrchestrator: ObservableObject {
             return
         }
         
+        // Record evaluations to history for graphing.
+        // We use win probability (0...1) normalized to White.
+        recordEvalToHistory()
+        
         lastTurnTime = Date()
         nextTurn()
+    }
+
+    private func recordEvalToHistory() {
+        if let info1 = player1Info {
+            let cp = info1.scoreCentipawns ?? 0
+            let winProb = 1.0 / (1.0 + pow(10.0, -Double(cp) / 400.0))
+            let whiteWinProb = (player1 === whitePlayer) ? winProb : (1.0 - winProb)
+            player1EvalHistory.append(whiteWinProb)
+        }
+        if let info2 = player2Info {
+            let cp = info2.scoreCentipawns ?? 0
+            let winProb = 1.0 / (1.0 + pow(10.0, -Double(cp) / 400.0))
+            let whiteWinProb = (player2 === whitePlayer) ? winProb : (1.0 - winProb)
+            player2EvalHistory.append(whiteWinProb)
+        }
     }
 
     private func pgnResult(for result: MatchResult) -> String {
