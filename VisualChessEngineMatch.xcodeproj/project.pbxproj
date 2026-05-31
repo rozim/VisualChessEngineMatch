@@ -22,6 +22,8 @@
 		000000000000000000000312 /* EngineOptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000114 /* EngineOptionStore.swift */; };
 		000000000000000000000313 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000115 /* BoardView.swift */; };
 		000000000000000000000314 /* MatchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000116 /* MatchConfig.swift */; };
+		000000000000000000000315 /* EPDFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000117 /* EPDFile.swift */; };
+		000000000000000000000316 /* openings.epd in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000500 /* openings.epd */; };
 		000000000000000000000400 /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000200 /* PlaceholderTests.swift */; };
 		000000000000000000000401 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000105 /* Square.swift */; };
 		000000000000000000000402 /* SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000201 /* SquareTests.swift */; };
@@ -44,6 +46,8 @@
 		000000000000000000000419 /* EngineOptionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000209 /* EngineOptionStoreTests.swift */; };
 		000000000000000000000420 /* MatchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000116 /* MatchConfig.swift */; };
 		000000000000000000000421 /* MatchConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000210 /* MatchConfigTests.swift */; };
+		000000000000000000000422 /* EPDFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000117 /* EPDFile.swift */; };
+		000000000000000000000423 /* EPDFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000211 /* EPDFileTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +80,10 @@
 		000000000000000000000114 /* EngineOptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineOptionStore.swift; sourceTree = "<group>"; };
 		000000000000000000000115 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		000000000000000000000116 /* MatchConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConfig.swift; sourceTree = "<group>"; };
-		000000000000000000000200 /* PlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTests.swift; sourceTree = "<group>"; };
+		000000000000000000000117 /* EPDFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPDFile.swift; sourceTree = "<group>"; };
+		000000000000000000000210 /* MatchConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConfigTests.swift; sourceTree = "<group>"; };
+		000000000000000000000211 /* EPDFileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPDFileTests.swift; sourceTree = "<group>"; };
+		000000000000000000000500 /* openings.epd */ = {isa = PBXFileReference; lastKnownFileType = text; path = openings.epd; sourceTree = "<group>"; };
 		000000000000000000000201 /* SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
 		000000000000000000000202 /* PositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
 		000000000000000000000203 /* MoveGenerationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveGenerationTests.swift; sourceTree = "<group>"; };
@@ -133,11 +140,21 @@
 				000000000000000000000114 /* EngineOptionStore.swift */,
 				000000000000000000000115 /* BoardView.swift */,
 				000000000000000000000116 /* MatchConfig.swift */,
+				000000000000000000000117 /* EPDFile.swift */,
+				000000000000000000000006 /* Resources */,
 				000000000000000000000102 /* Assets.xcassets */,
 				000000000000000000000103 /* Info.plist */,
 				000000000000000000000104 /* VisualChessEngineMatch.entitlements */,
 			);
 			path = VisualChessEngineMatch;
+			sourceTree = "<group>";
+		};
+		000000000000000000000006 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000500 /* openings.epd */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		000000000000000000000004 /* VisualChessEngineMatchTests */ = {
@@ -154,6 +171,7 @@
 				000000000000000000000208 /* UCIEngineTests.swift */,
 				000000000000000000000209 /* EngineOptionStoreTests.swift */,
 				000000000000000000000210 /* MatchConfigTests.swift */,
+				000000000000000000000211 /* EPDFileTests.swift */,
 			);
 			path = VisualChessEngineMatchTests;
 			sourceTree = "<group>";
@@ -248,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				000000000000000000000302 /* Assets.xcassets in Resources */,
+				000000000000000000000316 /* openings.epd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +291,7 @@
 				000000000000000000000312 /* EngineOptionStore.swift in Sources */,
 				000000000000000000000313 /* BoardView.swift in Sources */,
 				000000000000000000000314 /* MatchConfig.swift in Sources */,
+				000000000000000000000315 /* EPDFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +321,8 @@
 				000000000000000000000419 /* EngineOptionStoreTests.swift in Sources */,
 				000000000000000000000420 /* MatchConfig.swift in Sources */,
 				000000000000000000000421 /* MatchConfigTests.swift in Sources */,
+				000000000000000000000422 /* EPDFile.swift in Sources */,
+				000000000000000000000423 /* EPDFileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
