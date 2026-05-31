@@ -50,20 +50,24 @@ struct MatchView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(player?.name ?? (color == .white ? "White" : "Black"))
                     .font(.headline)
-                if let pv = info?.pv, !pv.isEmpty {
-                    let moves = orchestrator.controller.game.sanLine(forUCIMoves: pv, figurine: true)
-                    HStack(alignment: .firstTextBaseline, spacing: 4) {
-                        Text("PV:")
-                        FigurineSANLine(moves: moves, baseFont: .caption, figurineSize: 16)
-                    }
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
                     .lineLimit(1)
-                } else {
-                    Text("...")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                
+                HStack(alignment: .center, spacing: 4) {
+                    Text("PV:")
+                        .frame(height: 22)
+                    Group {
+                        if let pv = info?.pv, !pv.isEmpty {
+                            let moves = orchestrator.controller.game.sanLine(forUCIMoves: pv, figurine: true)
+                            FigurineSANLine(moves: moves, baseFont: .caption, figurineSize: 16)
+                        } else {
+                            Text("...")
+                                .frame(height: 22)
+                        }
+                    }
                 }
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .frame(height: 22, alignment: .leading)
             }
             
             Spacer()
@@ -74,11 +78,16 @@ struct MatchView: View {
                     .bold()
                     .foregroundStyle(isThinking(player) ? .primary : .secondary)
                 
-                if let nps = info?.nps {
-                    Text("\(nps / 1000) kN/s")
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
+                Group {
+                    if let nps = info?.nps {
+                        Text("\(nps / 1000) kN/s")
+                    } else {
+                        Text(" ") // Keeps space even when engine is idle
+                    }
                 }
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .frame(height: 14)
             }
         }
         .padding(8)
@@ -99,26 +108,27 @@ struct MatchView: View {
             
             Divider()
             
-            switch orchestrator.state {
-            case .playing(let num, let total):
-                Text("Game \(num) of \(total)")
-                    .font(.subheadline)
-            case .gameOver(_, let reason):
-                Text("Game Over: \(reason)")
-                    .font(.subheadline)
-                    .foregroundStyle(.orange)
-            case .matchOver:
-                Text("Match Finished")
-                    .font(.subheadline).bold()
-                    .foregroundStyle(.green)
-            case .error(let msg):
-                Text("Error: \(msg)")
-                    .font(.subheadline)
-                    .foregroundStyle(.red)
-            default:
-                Text("Ready")
-                    .font(.subheadline)
+            Group {
+                switch orchestrator.state {
+                case .playing(let num, let total):
+                    Text("Game \(num) of \(total)")
+                case .gameOver(_, let reason):
+                    Text("Game Over: \(reason)")
+                        .foregroundStyle(.orange)
+                case .matchOver:
+                    Text("Match Finished")
+                        .bold()
+                        .foregroundStyle(.green)
+                case .error(let msg):
+                    Text("Error: \(msg)")
+                        .foregroundStyle(.red)
+                default:
+                    Text("Ready")
+                }
             }
+            .font(.subheadline)
+            .lineLimit(2)
+            .frame(height: 36, alignment: .topLeading) // Fixed height prevents card growth
         }
         .padding()
         .background(Color(NSColor.windowBackgroundColor))

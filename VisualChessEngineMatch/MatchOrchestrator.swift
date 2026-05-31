@@ -63,6 +63,7 @@ final class MatchOrchestrator: ObservableObject {
     private var timerCancellable: AnyCancellable?
     
     private var lastTurnTime = Date()
+    private var turnStartClock: MatchClock?
     private var currentGameStartingFEN: String = GameState.standard.fen()
 
     init() {
@@ -174,6 +175,7 @@ final class MatchOrchestrator: ObservableObject {
             whiteIncrement: config.engine1.incrementPerMove,
             blackIncrement: config.engine2.incrementPerMove
         )
+        turnStartClock = clock
         
         lastTurnTime = Date()
         player1Info = nil
@@ -213,8 +215,13 @@ final class MatchOrchestrator: ObservableObject {
         guard player === activePlayer else { return }
         
         let elapsed = Date().timeIntervalSince(lastTurnTime)
-        clock?.consume(elapsed: elapsed, for: side)
-        clock?.addIncrement(for: side)
+        if var finalClock = turnStartClock {
+            finalClock.consume(elapsed: elapsed, for: side)
+            finalClock.addIncrement(for: side)
+            self.clock = finalClock
+            self.turnStartClock = finalClock
+            self.lastTurnTime = Date()
+        }
         
         if clock?.hasFlagFallen(for: side) == true {
             recordGameResult(side == .white ? .blackWin : .whiteWin, reason: "Time forfeit")
@@ -313,10 +320,11 @@ final class MatchOrchestrator: ObservableObject {
     private func updateClock() {
         guard case .playing = state, let side = Optional(controller.sideToMove) else { return }
         let elapsed = Date().timeIntervalSince(lastTurnTime)
-        if let currentClock = clock {
-            var tempClock = currentClock
-            tempClock.consume(elapsed: elapsed, for: side)
-            if tempClock.hasFlagFallen(for: side) {
+        
+        if var currentClock = turnStartClock {
+            currentClock.consume(elapsed: elapsed, for: side)
+            self.clock = currentClock // Published property update
+            if currentClock.hasFlagFallen(for: side) {
                 recordGameResult(side == .white ? .blackWin : .whiteWin, reason: "Time forfeit")
             }
         }

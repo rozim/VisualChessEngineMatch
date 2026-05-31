@@ -12,10 +12,11 @@ struct FigurineSANText: View {
     }
     
     var body: some View {
-        HStack(spacing: 0) {
+        HStack(alignment: .center, spacing: 0) {
             if let first = san.first, isFigurine(first) {
                 Text(String(first))
                     .font(.system(size: figurineSize))
+                    .frame(height: figurineSize) // Fix height of figurine
                 Text(san.dropFirst())
                     .font(baseFont)
             } else if san.contains("=") {
@@ -27,6 +28,7 @@ struct FigurineSANText: View {
                     if let firstFig = parts[1].first, isFigurine(firstFig) {
                         Text(String(firstFig))
                             .font(.system(size: figurineSize))
+                            .frame(height: figurineSize)
                         Text(parts[1].dropFirst())
                             .font(baseFont)
                     } else {
@@ -40,6 +42,7 @@ struct FigurineSANText: View {
                 Text(san).font(baseFont)
             }
         }
+        .frame(height: figurineSize) // Fix overall row height
     }
 }
 
@@ -52,11 +55,13 @@ struct FigurineSANLine: View {
     var body: some View {
         // Use a simple HStack for the PV line to avoid complex layout issues
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 6) {
+            HStack(alignment: .center, spacing: 6) {
                 ForEach(moves.indices, id: \.self) { i in
                     FigurineSANText(san: moves[i], baseFont: baseFont, figurineSize: figurineSize)
                 }
             }
+            .frame(height: figurineSize) // Ensure HStack doesn't bounce
         }
+        .frame(height: figurineSize) // Ensure ScrollView doesn't bounce
     }
 }
