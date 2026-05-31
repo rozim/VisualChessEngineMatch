@@ -58,7 +58,8 @@ struct PGNLogger {
             defer { try? handle.close() }
             handle.seekToEndOfFile()
             if let data = pgn.data(using: .utf8) {
-                handle.write(data)
+                try handle.write(contentsOf: data)
+                try handle.synchronize()
             }
         }
     }
