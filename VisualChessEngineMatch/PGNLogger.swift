@@ -50,8 +50,14 @@ struct PGNLogger {
     }
 
     static func appendToLog(pgn: String, filePath: String) throws {
-        let url = URL(fileURLWithPath: filePath)
-        if !FileManager.default.fileExists(atPath: filePath) {
+        var url = URL(fileURLWithPath: filePath)
+        
+        // If the path is relative, resolve it to the Home directory.
+        if !filePath.hasPrefix("/") {
+            url = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent(filePath)
+        }
+        
+        if !FileManager.default.fileExists(atPath: url.path) {
             try pgn.write(to: url, atomically: true, encoding: .utf8)
         } else {
             let handle = try FileHandle(forWritingTo: url)

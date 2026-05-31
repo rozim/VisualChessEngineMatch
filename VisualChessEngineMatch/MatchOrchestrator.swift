@@ -96,7 +96,14 @@ final class MatchOrchestrator: ObservableObject {
         
         // Clear existing PGN log if path is provided.
         if let pgnPath = config.pgnLogPath {
-            try? FileManager.default.removeItem(atPath: pgnPath)
+            let url: URL
+            if pgnPath.hasPrefix("/") {
+                url = URL(fileURLWithPath: pgnPath)
+            } else {
+                url = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent(pgnPath)
+            }
+            try? FileManager.default.removeItem(at: url)
+            print("LOG: Initialized PGN log at \(url.path)")
         }
         
         // Handle failures.
@@ -276,8 +283,8 @@ final class MatchOrchestrator: ObservableObject {
             let info = PGNLogger.GameInfo(
                 event: "VisualChessEngineMatch",
                 round: "\(score.gamesPlayed)",
-                white: whitePlayer === player1 ? config?.engine1.name ?? "E1" : config?.engine2.name ?? "E2",
-                black: blackPlayer === player1 ? config?.engine1.name ?? "E1" : config?.engine2.name ?? "E2",
+                white: whitePlayer?.name ?? "White",
+                black: blackPlayer?.name ?? "Black",
                 result: pgnResult(for: result),
                 fen: currentGameStartingFEN,
                 moves: controller.sanHistory

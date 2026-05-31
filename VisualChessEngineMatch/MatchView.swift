@@ -6,10 +6,15 @@ struct MatchView: View {
     
     var body: some View {
         HStack(spacing: 20) {
-            // Left column: Eval bar and Board
-            HStack(spacing: 8) {
-                let eval = currentEval()
-                EvalBarView(fraction: eval.fraction, label: eval.label)
+            // Left column: Eval bars and Board
+            HStack(spacing: 12) {
+                HStack(spacing: 4) {
+                    let eval1 = engineEval(info: orchestrator.player1Info, isWhite: orchestrator.player1 === orchestrator.whitePlayer)
+                    EvalBarView(fraction: eval1.fraction, label: eval1.label)
+                    
+                    let eval2 = engineEval(info: orchestrator.player2Info, isWhite: orchestrator.player2 === orchestrator.whitePlayer)
+                    EvalBarView(fraction: eval2.fraction, label: eval2.label)
+                }
                 
                 VStack(spacing: 12) {
                     playerHeader(player: blackPlayer(), info: blackInfo(), color: .black)
@@ -194,9 +199,7 @@ struct MatchView: View {
         }
     }
     
-    private func currentEval() -> (fraction: Double?, label: String?) {
-        // Get info from the side to move.
-        let info = orchestrator.controller.sideToMove == .white ? whiteInfo() : blackInfo()
+    private func engineEval(info: UCIInfo?, isWhite: Bool) -> (fraction: Double?, label: String?) {
         guard let info = info else { return (nil, nil) }
         
         let label: String
@@ -213,7 +216,10 @@ struct MatchView: View {
         }
         
         // Normalize to White perspective.
-        let whiteWinProb = orchestrator.controller.sideToMove == .white ? winProb : (1.0 - winProb)
+        // info.scoreCentipawns is relative to the side that was searching.
+        // If the searching engine is White, winProb is whiteWinProb.
+        // If the searching engine is Black, winProb is blackWinProb, so whiteWinProb is 1.0 - winProb.
+        let whiteWinProb = isWhite ? winProb : (1.0 - winProb)
         return (whiteWinProb, label)
     }
 }

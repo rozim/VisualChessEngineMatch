@@ -44,7 +44,7 @@ struct MatchConfig: Equatable, Codable {
         MatchConfig(
             miniMatchCount: 10,
             epdFilePath: nil,
-            pgnLogPath: nil,
+            pgnLogPath: "match.pgn",
             engine1: .standard(name: "Engine 1"),
             engine2: .standard(name: "Engine 2")
         )

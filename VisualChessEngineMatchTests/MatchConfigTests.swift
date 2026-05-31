@@ -6,6 +6,7 @@ final class MatchConfigTests: XCTestCase {
         let config = MatchConfig.standard()
         XCTAssertEqual(config.miniMatchCount, 10)
         XCTAssertNil(config.epdFilePath)
+        XCTAssertEqual(config.pgnLogPath, "match.pgn")
 
         XCTAssertEqual(config.engine1.name, "Engine 1")
         XCTAssertEqual(config.engine1.binaryPath, "/usr/local/bin/stockfish")
