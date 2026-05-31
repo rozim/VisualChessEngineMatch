@@ -32,6 +32,8 @@ struct MatchConfig: Equatable, Codable {
     var miniMatchCount: Int
     /// Path to the EPD file containing starting positions.
     var epdFilePath: String?
+    /// Path where the PGN log of the match should be written.
+    var pgnLogPath: String?
     /// Configuration for engine 1.
     var engine1: EngineConfig
     /// Configuration for engine 2.
@@ -40,7 +42,8 @@ struct MatchConfig: Equatable, Codable {
     static func standard() -> MatchConfig {
         MatchConfig(
             miniMatchCount: 10,
-            epdFilePath: nil, // Defaults to bundled file if nil
+            epdFilePath: nil,
+            pgnLogPath: nil,
             engine1: .standard(name: "Engine 1"),
             engine2: .standard(name: "Engine 2")
         )

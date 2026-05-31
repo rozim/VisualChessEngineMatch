@@ -23,6 +23,10 @@
 		000000000000000000000313 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000115 /* BoardView.swift */; };
 		000000000000000000000314 /* MatchConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000116 /* MatchConfig.swift */; };
 		000000000000000000000315 /* EPDFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000117 /* EPDFile.swift */; };
+		000000000000000000000317 /* MatchClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000118 /* MatchClock.swift */; };
+		000000000000000000000318 /* MatchPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000119 /* MatchPlayer.swift */; };
+		000000000000000000000319 /* MatchOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000120 /* MatchOrchestrator.swift */; };
+		000000000000000000000320 /* PGNLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000121 /* PGNLogger.swift */; };
 		000000000000000000000316 /* openings.epd in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000500 /* openings.epd */; };
 		000000000000000000000400 /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000200 /* PlaceholderTests.swift */; };
 		000000000000000000000401 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000105 /* Square.swift */; };
@@ -48,6 +52,14 @@
 		000000000000000000000421 /* MatchConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000210 /* MatchConfigTests.swift */; };
 		000000000000000000000422 /* EPDFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000117 /* EPDFile.swift */; };
 		000000000000000000000423 /* EPDFileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000211 /* EPDFileTests.swift */; };
+		000000000000000000000424 /* MatchClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000118 /* MatchClock.swift */; };
+		000000000000000000000425 /* MatchClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000212 /* MatchClockTests.swift */; };
+		000000000000000000000426 /* MatchPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000119 /* MatchPlayer.swift */; };
+		000000000000000000000427 /* MatchPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000213 /* MatchPlayerTests.swift */; };
+		000000000000000000000428 /* MatchOrchestrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000120 /* MatchOrchestrator.swift */; };
+		000000000000000000000429 /* MatchOrchestratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000214 /* MatchOrchestratorTests.swift */; };
+		000000000000000000000430 /* PGNLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000121 /* PGNLogger.swift */; };
+		000000000000000000000431 /* PGNLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000215 /* PGNLoggerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,8 +93,16 @@
 		000000000000000000000115 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		000000000000000000000116 /* MatchConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConfig.swift; sourceTree = "<group>"; };
 		000000000000000000000117 /* EPDFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPDFile.swift; sourceTree = "<group>"; };
+		000000000000000000000118 /* MatchClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchClock.swift; sourceTree = "<group>"; };
+		000000000000000000000119 /* MatchPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPlayer.swift; sourceTree = "<group>"; };
+		000000000000000000000120 /* MatchOrchestrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOrchestrator.swift; sourceTree = "<group>"; };
+		000000000000000000000121 /* PGNLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNLogger.swift; sourceTree = "<group>"; };
 		000000000000000000000210 /* MatchConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchConfigTests.swift; sourceTree = "<group>"; };
 		000000000000000000000211 /* EPDFileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPDFileTests.swift; sourceTree = "<group>"; };
+		000000000000000000000212 /* MatchClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchClockTests.swift; sourceTree = "<group>"; };
+		000000000000000000000213 /* MatchPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPlayerTests.swift; sourceTree = "<group>"; };
+		000000000000000000000214 /* MatchOrchestratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOrchestratorTests.swift; sourceTree = "<group>"; };
+		000000000000000000000215 /* PGNLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PGNLoggerTests.swift; sourceTree = "<group>"; };
 		000000000000000000000500 /* openings.epd */ = {isa = PBXFileReference; lastKnownFileType = text; path = openings.epd; sourceTree = "<group>"; };
 		000000000000000000000201 /* SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
 		000000000000000000000202 /* PositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
@@ -141,6 +161,10 @@
 				000000000000000000000115 /* BoardView.swift */,
 				000000000000000000000116 /* MatchConfig.swift */,
 				000000000000000000000117 /* EPDFile.swift */,
+				000000000000000000000118 /* MatchClock.swift */,
+				000000000000000000000119 /* MatchPlayer.swift */,
+				000000000000000000000120 /* MatchOrchestrator.swift */,
+				000000000000000000000121 /* PGNLogger.swift */,
 				000000000000000000000006 /* Resources */,
 				000000000000000000000102 /* Assets.xcassets */,
 				000000000000000000000103 /* Info.plist */,
@@ -172,6 +196,10 @@
 				000000000000000000000209 /* EngineOptionStoreTests.swift */,
 				000000000000000000000210 /* MatchConfigTests.swift */,
 				000000000000000000000211 /* EPDFileTests.swift */,
+				000000000000000000000212 /* MatchClockTests.swift */,
+				000000000000000000000213 /* MatchPlayerTests.swift */,
+				000000000000000000000214 /* MatchOrchestratorTests.swift */,
+				000000000000000000000215 /* PGNLoggerTests.swift */,
 			);
 			path = VisualChessEngineMatchTests;
 			sourceTree = "<group>";
@@ -292,6 +320,10 @@
 				000000000000000000000313 /* BoardView.swift in Sources */,
 				000000000000000000000314 /* MatchConfig.swift in Sources */,
 				000000000000000000000315 /* EPDFile.swift in Sources */,
+				000000000000000000000317 /* MatchClock.swift in Sources */,
+				000000000000000000000318 /* MatchPlayer.swift in Sources */,
+				000000000000000000000319 /* MatchOrchestrator.swift in Sources */,
+				000000000000000000000320 /* PGNLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +355,14 @@
 				000000000000000000000421 /* MatchConfigTests.swift in Sources */,
 				000000000000000000000422 /* EPDFile.swift in Sources */,
 				000000000000000000000423 /* EPDFileTests.swift in Sources */,
+				000000000000000000000424 /* MatchClock.swift in Sources */,
+				000000000000000000000425 /* MatchClockTests.swift in Sources */,
+				000000000000000000000426 /* MatchPlayer.swift in Sources */,
+				000000000000000000000427 /* MatchPlayerTests.swift in Sources */,
+				000000000000000000000428 /* MatchOrchestrator.swift in Sources */,
+				000000000000000000000429 /* MatchOrchestratorTests.swift in Sources */,
+				000000000000000000000430 /* PGNLogger.swift in Sources */,
+				000000000000000000000431 /* PGNLoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
