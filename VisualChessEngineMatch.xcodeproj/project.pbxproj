@@ -17,6 +17,9 @@
 		000000000000000000000307 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000109 /* GameState.swift */; };
 		000000000000000000000308 /* SAN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000110 /* SAN.swift */; };
 		000000000000000000000309 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000111 /* GameController.swift */; };
+		000000000000000000000310 /* UCIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000112 /* UCIProtocol.swift */; };
+		000000000000000000000311 /* UCIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000113 /* UCIEngine.swift */; };
+		000000000000000000000312 /* EngineOptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000114 /* EngineOptionStore.swift */; };
 		000000000000000000000400 /* PlaceholderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000200 /* PlaceholderTests.swift */; };
 		000000000000000000000401 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000105 /* Square.swift */; };
 		000000000000000000000402 /* SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000201 /* SquareTests.swift */; };
@@ -31,6 +34,12 @@
 		000000000000000000000409 /* MoveGenerationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000203 /* MoveGenerationTests.swift */; };
 		000000000000000000000410 /* DrawRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000204 /* DrawRulesTests.swift */; };
 		000000000000000000000411 /* SANTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000205 /* SANTests.swift */; };
+		000000000000000000000414 /* UCIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000112 /* UCIProtocol.swift */; };
+		000000000000000000000415 /* UCIEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000113 /* UCIEngine.swift */; };
+		000000000000000000000416 /* EngineOptionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000114 /* EngineOptionStore.swift */; };
+		000000000000000000000417 /* UCIProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000207 /* UCIProtocolTests.swift */; };
+		000000000000000000000418 /* UCIEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000208 /* UCIEngineTests.swift */; };
+		000000000000000000000419 /* EngineOptionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000209 /* EngineOptionStoreTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +67,9 @@
 		000000000000000000000109 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		000000000000000000000110 /* SAN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAN.swift; sourceTree = "<group>"; };
 		000000000000000000000111 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		000000000000000000000112 /* UCIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIProtocol.swift; sourceTree = "<group>"; };
+		000000000000000000000113 /* UCIEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIEngine.swift; sourceTree = "<group>"; };
+		000000000000000000000114 /* EngineOptionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineOptionStore.swift; sourceTree = "<group>"; };
 		000000000000000000000200 /* PlaceholderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTests.swift; sourceTree = "<group>"; };
 		000000000000000000000201 /* SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
 		000000000000000000000202 /* PositionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionTests.swift; sourceTree = "<group>"; };
@@ -65,6 +77,9 @@
 		000000000000000000000204 /* DrawRulesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRulesTests.swift; sourceTree = "<group>"; };
 		000000000000000000000205 /* SANTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SANTests.swift; sourceTree = "<group>"; };
 		000000000000000000000206 /* GameControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControllerTests.swift; sourceTree = "<group>"; };
+		000000000000000000000207 /* UCIProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIProtocolTests.swift; sourceTree = "<group>"; };
+		000000000000000000000208 /* UCIEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCIEngineTests.swift; sourceTree = "<group>"; };
+		000000000000000000000209 /* EngineOptionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineOptionStoreTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +121,9 @@
 				000000000000000000000109 /* GameState.swift */,
 				000000000000000000000110 /* SAN.swift */,
 				000000000000000000000111 /* GameController.swift */,
+				000000000000000000000112 /* UCIProtocol.swift */,
+				000000000000000000000113 /* UCIEngine.swift */,
+				000000000000000000000114 /* EngineOptionStore.swift */,
 				000000000000000000000102 /* Assets.xcassets */,
 				000000000000000000000103 /* Info.plist */,
 				000000000000000000000104 /* VisualChessEngineMatch.entitlements */,
@@ -123,6 +141,9 @@
 				000000000000000000000204 /* DrawRulesTests.swift */,
 				000000000000000000000205 /* SANTests.swift */,
 				000000000000000000000206 /* GameControllerTests.swift */,
+				000000000000000000000207 /* UCIProtocolTests.swift */,
+				000000000000000000000208 /* UCIEngineTests.swift */,
+				000000000000000000000209 /* EngineOptionStoreTests.swift */,
 			);
 			path = VisualChessEngineMatchTests;
 			sourceTree = "<group>";
@@ -236,6 +257,9 @@
 				000000000000000000000307 /* GameState.swift in Sources */,
 				000000000000000000000308 /* SAN.swift in Sources */,
 				000000000000000000000309 /* GameController.swift in Sources */,
+				000000000000000000000310 /* UCIProtocol.swift in Sources */,
+				000000000000000000000311 /* UCIEngine.swift in Sources */,
+				000000000000000000000312 /* EngineOptionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +281,12 @@
 				000000000000000000000411 /* SANTests.swift in Sources */,
 				000000000000000000000412 /* GameController.swift in Sources */,
 				000000000000000000000413 /* GameControllerTests.swift in Sources */,
+				000000000000000000000414 /* UCIProtocol.swift in Sources */,
+				000000000000000000000415 /* UCIEngine.swift in Sources */,
+				000000000000000000000416 /* EngineOptionStore.swift in Sources */,
+				000000000000000000000417 /* UCIProtocolTests.swift in Sources */,
+				000000000000000000000418 /* UCIEngineTests.swift in Sources */,
+				000000000000000000000419 /* EngineOptionStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
