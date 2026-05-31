@@ -46,7 +46,7 @@ final class MatchPlayerTests: XCTestCase {
         }
         
         XCTAssertEqual(player.state, .ready)
-        XCTAssertEqual(player.name, "MockEngine")
+        XCTAssertTrue(player.name.contains("MockEngine"))
 
         var infoReceived = false
         player.infoPublisher.sink { info in

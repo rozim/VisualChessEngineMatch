@@ -84,15 +84,18 @@ struct MatchConfigView: View {
             
             HStack {
                 Text("Name")
-                TextField("Friendly Name", text: config.wrappedValue.name == "Engine 1" || config.wrappedValue.name == "Engine 2" ? .constant("") : Binding(
+                TextField("Friendly Name", text: Binding(
                     get: { config.wrappedValue.name },
-                    set: { config.wrappedValue.name = $0 }
+                    set: { config.wrappedValue.name = $0.trimmingCharacters(in: .whitespaces) }
                 ))
             }
             
             HStack {
                 Text("Path")
-                TextField("Binary Path", text: config.binaryPath)
+                TextField("Binary Path", text: Binding(
+                    get: { config.wrappedValue.binaryPath },
+                    set: { config.wrappedValue.binaryPath = $0.trimmingCharacters(in: .whitespaces) }
+                ))
             }
         }
         .padding(.vertical, 4)

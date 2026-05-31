@@ -68,7 +68,12 @@ final class MatchPlayer: ObservableObject {
 
     private func handle(_ line: String) {
         if let id = UCIProtocol.parseID(line) {
-            if id.0 == .name && (name.isEmpty || name == "Test") { name = id.1 }
+            if id.0 == .name {
+                let reportedName = id.1
+                if !name.contains(reportedName) {
+                    name += " (\(reportedName))"
+                }
+            }
         } else if line == "uciok" {
             for (name, value) in uciOptions {
                 engine?.send("setoption name \(name) value \(value)")

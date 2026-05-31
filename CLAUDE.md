@@ -18,7 +18,9 @@ Goal:
 - Find an EPD file of unbalanced chess engine match starting positions
 
 - Engine configuration -- this applies to each of the 2 engines
--- Binary path - default to /usr/local/bin/stockfish
+-- Binary path -
+--- engine 1 defaults to /usr/local/bin/stockfish
+--- engine 2 defaults to /opt/homebrew/bin/lc0
 -- Once the engine starts up, query it for UCI options
 -- Time per game
 -- Increment per move
@@ -38,6 +40,7 @@ Goal:
 - Display
 -- Current chess board
 -- Engine names
+--- After each generic name ("Engine 1", "Engine 2") append the string that comes back after the "uci" command is sent to the engine and it responds with an "id name" line
 -- Time remaining for each engine
 -- Mini match number
 -- Each engine cumulative score (win=1, draw=0.5, loss=0)
@@ -48,3 +51,6 @@ Goal:
 - Write a PGN log file of the current match
 -- Overwrite the file when starting
 -- Append each game to file
+
+- Icon
+-- Create a surrealistic hypermodern high resolution app icon that shows 2 chess pieces fighting

@@ -14,11 +14,12 @@ struct EngineConfig: Equatable, Codable {
     var uciOptions: [String: String]
 
     static let defaultStockfishPath = "/usr/local/bin/stockfish"
+    static let defaultLc0Path = "/opt/homebrew/bin/lc0"
 
     static func standard(name: String) -> EngineConfig {
         EngineConfig(
             name: name,
-            binaryPath: defaultStockfishPath,
+            binaryPath: name.contains("1") ? defaultStockfishPath : defaultLc0Path,
             timePerGame: 10,
             incrementPerMove: 0.1,
             uciOptions: [:]
