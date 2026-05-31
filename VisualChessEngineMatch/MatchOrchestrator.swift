@@ -36,14 +36,28 @@ final class MatchOrchestrator: ObservableObject {
     /// Engines for the match.
     @Published private(set) var player1 = MatchPlayer()
     @Published private(set) var player2 = MatchPlayer()
+    @Published private(set) var player1Info: UCIInfo?
+    @Published private(set) var player2Info: UCIInfo?
     
     private var config: MatchConfig?
     private var openingPositions: [String] = []
     
     /// Which player is currently White.
-    private var whitePlayer: MatchPlayer?
+    private(set) var whitePlayer: MatchPlayer?
     /// Which player is currently Black.
-    private var blackPlayer: MatchPlayer?
+    private(set) var blackPlayer: MatchPlayer?
+    
+    var whiteInfo: UCIInfo? {
+        if whitePlayer === player1 { return player1Info }
+        if whitePlayer === player2 { return player2Info }
+        return nil
+    }
+    
+    var blackInfo: UCIInfo? {
+        if blackPlayer === player1 { return player1Info }
+        if blackPlayer === player2 { return player2Info }
+        return nil
+    }
     
     private var cancellables = Set<AnyCancellable>()
     private var timerCancellable: AnyCancellable?
@@ -61,6 +75,8 @@ final class MatchOrchestrator: ObservableObject {
         self.config = config
         self.score = MatchScore()
         self.state = .initializing
+        self.player1Info = nil
+        self.player2Info = nil
         
         // Load openings.
         if let epdPath = config.epdFilePath {
@@ -153,6 +169,8 @@ final class MatchOrchestrator: ObservableObject {
         )
         
         lastTurnTime = Date()
+        player1Info = nil
+        player2Info = nil
         startTimer()
         nextTurn()
     }
@@ -168,6 +186,14 @@ final class MatchOrchestrator: ObservableObject {
             .sink { [weak self] uci in
                 guard let self = self else { return }
                 self.handleEngineMove(uci, from: player)
+            }
+            .store(in: &cancellables)
+            
+        player.infoPublisher
+            .sink { [weak self] info in
+                guard let self = self else { return }
+                if player === self.player1 { self.player1Info = info }
+                else if player === self.player2 { self.player2Info = info }
             }
             .store(in: &cancellables)
     }
