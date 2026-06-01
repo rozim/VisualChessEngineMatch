@@ -32,7 +32,7 @@ final class MatchPlayerTests: XCTestCase {
         try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: engineURL.path)
 
         let player = MatchPlayer()
-        let config = EngineConfig(name: "Test", binaryPath: engineURL.path, timePerGame: 10, incrementPerMove: 0, uciOptions: [:])
+        let config = EngineConfig(name: "Test", binaryPath: engineURL.path, timePerGame: 10, incrementPerMove: 0, nodeLimit: 1000, uciOptions: [:])
 
         var stateHistory: [MatchPlayer.State] = []
         player.$state.sink { stateHistory.append($0) }.store(in: &cancellables)
@@ -56,7 +56,7 @@ final class MatchPlayerTests: XCTestCase {
         var bestMove: String?
         player.bestMovePublisher.sink { bestMove = $0 }.store(in: &cancellables)
 
-        player.search(state: .standard, clock: MatchClock(whiteTime: 10, blackTime: 10))
+        player.search(state: .standard, clock: MatchClock(whiteTime: 10, blackTime: 10), mode: .time, nodeLimit: 1000)
         
         let start2 = Date()
         while (bestMove == nil || !infoReceived) && Date().timeIntervalSince(start2) < 5 {

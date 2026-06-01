@@ -230,7 +230,7 @@ final class MatchOrchestrator: ObservableObject {
             self.lastTurnTime = Date()
         }
         
-        if clock?.hasFlagFallen(for: side) == true {
+        if config?.mode == .time && clock?.hasFlagFallen(for: side) == true {
             recordGameResult(side == .white ? .blackWin : .whiteWin, reason: "Time forfeit")
             return
         }
@@ -350,7 +350,7 @@ final class MatchOrchestrator: ObservableObject {
         if var currentClock = turnStartClock {
             currentClock.consume(elapsed: elapsed, for: side)
             self.clock = currentClock // Published property update
-            if currentClock.hasFlagFallen(for: side) {
+            if config?.mode == .time && currentClock.hasFlagFallen(for: side) {
                 recordGameResult(side == .white ? .blackWin : .whiteWin, reason: "Time forfeit")
             }
         }
