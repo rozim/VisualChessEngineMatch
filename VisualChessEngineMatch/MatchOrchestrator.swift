@@ -28,6 +28,10 @@ final class MatchOrchestrator: ObservableObject {
     @Published private(set) var state: State = .idle
     @Published private(set) var score = MatchScore()
     
+    /// Total time used by each player in the current game (seconds).
+    @Published private(set) var player1TotalTime: TimeInterval = 0
+    @Published private(set) var player2TotalTime: TimeInterval = 0
+    
     /// The live game state.
     @Published private(set) var controller = GameController()
     /// The match clock.
@@ -43,7 +47,7 @@ final class MatchOrchestrator: ObservableObject {
     @Published private(set) var player1EvalHistory: [Double] = []
     @Published private(set) var player2EvalHistory: [Double] = []
     
-    private var config: MatchConfig?
+    private(set) var config: MatchConfig?
     private var openingPositions: [String] = []
     
     /// Which player is currently White.
@@ -68,6 +72,8 @@ final class MatchOrchestrator: ObservableObject {
     
     private var lastTurnTime = Date()
     private var turnStartClock: MatchClock?
+    private var player1BaseTime: TimeInterval = 0
+    private var player2BaseTime: TimeInterval = 0
     private var currentGameStartingFEN: String = GameState.standard.fen()
 
     init() {
@@ -154,6 +160,10 @@ final class MatchOrchestrator: ObservableObject {
         controller.reset()
         player1EvalHistory = []
         player2EvalHistory = []
+        player1TotalTime = 0
+        player2TotalTime = 0
+        player1BaseTime = 0
+        player2BaseTime = 0
         
         // Mini-match logic: game 1 has E1=White, game 2 has E2=White.
         let miniMatchIndex = (gameNumber - 1) / 2
@@ -166,11 +176,9 @@ final class MatchOrchestrator: ObservableObject {
         
         // Swap colors every game.
         if isSecondInMini {
-            // Engine 2 is White.
             whitePlayer = player2
             blackPlayer = player1
         } else {
-            // Engine 1 is White.
             whitePlayer = player1
             blackPlayer = player2
         }
@@ -222,14 +230,25 @@ final class MatchOrchestrator: ObservableObject {
         guard player === activePlayer else { return }
         
         let elapsed = Date().timeIntervalSince(lastTurnTime)
+        
         if var finalClock = turnStartClock {
             finalClock.consume(elapsed: elapsed, for: side)
             finalClock.addIncrement(for: side)
             self.clock = finalClock
             self.turnStartClock = finalClock
-            self.lastTurnTime = Date()
+        }
+
+        // Finalize base times for the next turn.
+        if player === player1 {
+            player1BaseTime += elapsed
+            player1TotalTime = player1BaseTime
+        } else if player === player2 {
+            player2BaseTime += elapsed
+            player2TotalTime = player2BaseTime
         }
         
+        lastTurnTime = Date()
+
         if config?.mode == .time && clock?.hasFlagFallen(for: side) == true {
             recordGameResult(side == .white ? .blackWin : .whiteWin, reason: "Time forfeit")
             return
@@ -250,11 +269,7 @@ final class MatchOrchestrator: ObservableObject {
             return
         }
         
-        // Record evaluations to history for graphing.
-        // We use win probability (0...1) normalized to White.
         recordEvalToHistory()
-        
-        lastTurnTime = Date()
         nextTurn()
     }
 
@@ -291,8 +306,6 @@ final class MatchOrchestrator: ObservableObject {
     private func recordGameResult(_ result: MatchResult, reason: String) {
         timerCancellable = nil
         
-        // Add to match score.
-        // Identify which engine was which.
         let winnerIsE1: Double
         let winnerIsE2: Double
         
@@ -311,7 +324,6 @@ final class MatchOrchestrator: ObservableObject {
         score.engine2Score += winnerIsE2
         score.gamesPlayed += 1
         
-        // Log to PGN if path is provided.
         if let pgnPath = config?.pgnLogPath {
             let info = PGNLogger.GameInfo(
                 event: "VisualChessEngineMatch",
@@ -328,7 +340,6 @@ final class MatchOrchestrator: ObservableObject {
         
         state = .gameOver(result, reason: reason)
         
-        // Automatic transition to next game after a brief delay.
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             guard let self = self else { return }
             if case .gameOver = self.state {
@@ -349,10 +360,18 @@ final class MatchOrchestrator: ObservableObject {
         
         if var currentClock = turnStartClock {
             currentClock.consume(elapsed: elapsed, for: side)
-            self.clock = currentClock // Published property update
+            self.clock = currentClock 
             if config?.mode == .time && currentClock.hasFlagFallen(for: side) {
                 recordGameResult(side == .white ? .blackWin : .whiteWin, reason: "Time forfeit")
             }
+        }
+        
+        // Update live total time used.
+        let activePlayer = side == .white ? whitePlayer : blackPlayer
+        if activePlayer === player1 {
+            player1TotalTime = player1BaseTime + elapsed
+        } else if activePlayer === player2 {
+            player2TotalTime = player2BaseTime + elapsed
         }
     }
 }

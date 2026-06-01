@@ -78,7 +78,7 @@ struct MatchView: View {
             Spacer()
             
             VStack(alignment: .trailing, spacing: 4) {
-                Text(formatTime(orchestrator.clock?.timeMs(for: color) ?? 0))
+                Text(displayedTime(for: color))
                     .font(.system(.title3, design: .monospaced))
                     .bold()
                     .foregroundStyle(isThinking(player) ? .primary : .secondary)
@@ -196,6 +196,22 @@ struct MatchView: View {
     
     private func isThinking(_ player: MatchPlayer?) -> Bool {
         player?.state == .thinking
+    }
+    
+    private func displayedTime(for color: PieceColor) -> String {
+        if orchestrator.config?.mode == .nodes {
+            let total = totalTimeUsed(for: color)
+            return formatTime(Int(total * 1000))
+        } else {
+            return formatTime(orchestrator.clock?.timeMs(for: color) ?? 0)
+        }
+    }
+    
+    private func totalTimeUsed(for color: PieceColor) -> TimeInterval {
+        let player = color == .white ? orchestrator.whitePlayer : orchestrator.blackPlayer
+        if player === orchestrator.player1 { return orchestrator.player1TotalTime }
+        if player === orchestrator.player2 { return orchestrator.player2TotalTime }
+        return 0
     }
     
     private func formatTime(_ ms: Int) -> String {
